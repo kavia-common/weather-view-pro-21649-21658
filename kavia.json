@@ -31,6 +31,12 @@
           "accent": "#F59E0B",
           "background": "#f9fafb"
         }
+      },
+      "preview": {
+        "framework": "angular",
+        "start": "npm start",
+        "working_directory": "weather-view-pro-21649-21658/weather_frontend",
+        "port": 3000
       }
     }
   ],

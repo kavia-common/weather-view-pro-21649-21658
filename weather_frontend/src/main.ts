@@ -5,7 +5,11 @@ import { AppComponent } from './app/app.component';
 import { appRoutes } from './app/app.routes';
 import { HttpInterceptorFn } from '@angular/common/http';
 
-// Simple interceptor placeholder (e.g., attach auth token later)
+/**
+ * Angular bootstrap entrypoint (standalone).
+ * Note: This project uses Angular, not Next.js. Any previous references were removed.
+ * Simple interceptor placeholder (e.g., attach auth token later)
+ */
 // PUBLIC_INTERFACE
 export const apiInterceptor: HttpInterceptorFn = (req, next) => {
   // Example: attach auth header when available
