@@ -11,4 +11,4 @@ Scripts:
 - npm run build -> ng build
 
 Notes:
-- The app was migrated from Next.js; any remaining Next.js artifacts under out/ can be ignored or cleaned later.
+- This app uses REST calls to backend endpoints at `/api/*`. Configure your reverse proxy or dev server accordingly.

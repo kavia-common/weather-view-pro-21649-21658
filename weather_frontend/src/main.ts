@@ -7,12 +7,14 @@ import { HttpInterceptorFn } from '@angular/common/http';
 
 /**
  * Angular bootstrap entrypoint (standalone).
- * Note: This project uses Angular, not Next.js. Any previous references were removed.
- * Simple interceptor placeholder (e.g., attach auth token later)
+ * Uses Angular framework with REST calls to `/api/*`.
  */
 // PUBLIC_INTERFACE
 export const apiInterceptor: HttpInterceptorFn = (req, next) => {
-  // Example: attach auth header when available
+  /**
+   * This public interceptor is a placeholder to attach auth headers or
+   * perform request logging. Currently it forwards the request unchanged.
+   */
   return next(req);
 };
 

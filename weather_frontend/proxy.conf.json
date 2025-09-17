@@ -1,0 +1,10 @@
+{
+  // Example proxy for local dev: forward /api to backend at localhost:8080
+  // To enable, add "proxyConfig": "proxy.conf.json" to angular.json serve options.
+  "/api": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

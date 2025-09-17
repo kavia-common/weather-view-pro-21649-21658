@@ -51,6 +51,8 @@
             "buildTarget": "weather-frontend:build:development",
             "port": 3000,
             "host": "0.0.0.0"
+            // Tip: configure a proxy if backend runs on a different origin. Example:
+            // "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {

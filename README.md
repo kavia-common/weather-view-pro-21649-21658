@@ -3,7 +3,8 @@
 This workspace contains the `weather_frontend` Angular application.
 
 - Frontend: `weather_frontend/` (Angular 17 standalone)
-- Start frontend (dev): `cd weather_frontend && npm install && npm start` (default Angular dev server; if configured to port 3000, access via http://localhost:3000; otherwise http://localhost:4200)
+- Development start: `cd weather_frontend && npm install && npm start` (Angular dev server on http://localhost:3000)
+- Build: `cd weather_frontend && npm run build` (outputs to `dist/weather-frontend`)
 
 Backend is expected to provide REST endpoints at `/api/*` paths.
 

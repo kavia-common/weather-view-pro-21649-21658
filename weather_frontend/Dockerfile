@@ -1,5 +1,4 @@
-# Multi-stage Dockerfile for Angular app (dev-friendly). Migrated from any prior Next.js setup.
-# Stage 1: Base Node image
+# Angular dev-friendly Dockerfile
 FROM node:20-alpine AS base
 WORKDIR /app
 
@@ -16,9 +15,7 @@ EXPOSE 3000
 # Default command: start Angular dev server (preview systems expect a long-running process)
 CMD ["npm", "start"]
 
-# For production builds, you can build with:
-#   docker build --target prod -t weather-frontend:prod .
-# and run a static server (nginx) using the dist output.
+# Production build stage (optional)
 FROM node:20-alpine AS prod-build
 WORKDIR /app
 COPY package.json package-lock.json* ./
