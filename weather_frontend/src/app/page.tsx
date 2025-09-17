@@ -73,6 +73,37 @@ export default function Home() {
     setSelected(query);
   };
 
+  // Geolocation scaffold: on success, we can pass "lat,lon" or a resolved city.
+  const handleLocateMe = () => {
+    if (!navigator.geolocation) {
+      setError("Geolocation is not supported by your browser.");
+      return;
+    }
+    setLoading(true);
+    setError(null);
+    navigator.geolocation.getCurrentPosition(
+      async (pos) => {
+        try {
+          const { latitude, longitude } = pos.coords;
+          // Prefer backends that accept coordinates: e.g., "lat,lon"
+          const coordQuery = `${latitude.toFixed(4)},${longitude.toFixed(4)}`;
+          setSelected(coordQuery);
+          // Optionally: if backend needs reverse geocoding, do it here in future.
+        } catch (e) {
+          const msg = e instanceof Error ? e.message : "Failed to use current location.";
+          setError(msg);
+        } finally {
+          setLoading(false);
+        }
+      },
+      (err) => {
+        setLoading(false);
+        setError(err?.message || "Unable to retrieve your location.");
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 }
+    );
+  };
+
   const handleAddLocation = async (name: string) => {
     // Optimistic add
     const localId = `local-${Date.now()}`;
@@ -101,7 +132,7 @@ export default function Home() {
 
   return (
     <>
-      <Header onSearch={handleSearch} onAddLocation={handleAddLocation} />
+      <Header onSearch={handleSearch} onAddLocation={handleAddLocation} onLocateMe={handleLocateMe} />
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Sidebar */}

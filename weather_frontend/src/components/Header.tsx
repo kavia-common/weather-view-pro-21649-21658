@@ -2,11 +2,16 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Search, User } from "lucide-react";
+import { Search, User, LocateFixed } from "lucide-react";
 
 type Props = {
   onSearch?: (query: string) => void;
   onAddLocation?: (name: string) => void;
+  /**
+   * Optional geolocation trigger. If provided, a location button will appear.
+   * Implementer should handle calling navigator.geolocation and reverse lookup.
+   */
+  onLocateMe?: () => void;
 };
 
 /**
@@ -15,7 +20,7 @@ type Props = {
  * Reusable app header with logo, search, save action, and navigation links.
  * Accepts optional onSearch and onAddLocation for contexts that need search.
  */
-export default function Header({ onSearch, onAddLocation }: Props) {
+export default function Header({ onSearch, onAddLocation, onLocateMe }: Props) {
   const [query, setQuery] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -70,6 +75,18 @@ export default function Header({ onSearch, onAddLocation }: Props) {
               <button type="button" onClick={addLocationClicked} className="btn btn-secondary px-4 py-2" disabled={!onAddLocation}>
                 Save
               </button>
+              {onLocateMe && (
+                <button
+                  type="button"
+                  onClick={onLocateMe}
+                  className="btn btn-ghost px-3 py-2 border border-black/10 hover:border-blue-400 hover:bg-blue-50/60"
+                  aria-label="Use my current location"
+                  title="Use my current location"
+                >
+                  <LocateFixed className="size-4 text-blue-600" />
+                  <span className="hidden lg:inline ml-1">Locate</span>
+                </button>
+              )}
             </form>
 
             {/* Nav links */}
@@ -102,6 +119,17 @@ export default function Header({ onSearch, onAddLocation }: Props) {
                 />
                 <button type="submit" className="btn btn-primary px-3 py-2">Go</button>
               </form>
+            )}
+            {onLocateMe && (
+              <button
+                type="button"
+                onClick={onLocateMe}
+                className="btn btn-ghost px-2 py-2 border border-black/10 hover:border-blue-400 hover:bg-blue-50/60"
+                aria-label="Use my current location"
+                title="Use my current location"
+              >
+                <LocateFixed className="size-5 text-blue-600" />
+              </button>
             )}
             <Link
               href="/profile"
