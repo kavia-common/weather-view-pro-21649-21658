@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges, signal, effect } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WeatherService, WeatherResult } from '../../services/weather.service';
 import { WeatherCardComponent } from '../weather-card/weather-card.component';
@@ -7,8 +7,8 @@ import { WeatherCardComponent } from '../weather-card/weather-card.component';
   selector: 'app-weather-grid',
   standalone: true,
   imports: [CommonModule, WeatherCardComponent],
-  templateUrl: './weather-grid.component.html',
-  styleUrls: ['./weather-grid.component.scss']
+  templateUrl: './weather-grid.component.html'
+  // Removed missing SCSS file reference to fix build error.
 })
 export class WeatherGridComponent implements OnChanges {
   @Input() city: string | null = null;
