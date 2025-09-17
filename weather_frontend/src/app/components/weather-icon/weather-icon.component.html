@@ -1,0 +1,64 @@
+<div class="icon" [style.width.px]="size" [style.height.px]="size" [attr.data-kind]="kind()">
+  <svg *ngIf="kind() === 'sun'" viewBox="0 0 64 64" fill="none">
+    <circle cx="32" cy="32" r="12" fill="url(#g1)"></circle>
+    <g stroke="#f59e0b" stroke-width="3" stroke-linecap="round">
+      <line x1="32" y1="4" x2="32" y2="14"></line>
+      <line x1="32" y1="50" x2="32" y2="60"></line>
+      <line x1="4" y1="32" x2="14" y2="32"></line>
+      <line x1="50" y1="32" x2="60" y2="32"></line>
+      <line x1="12" y1="12" x2="19" y2="19"></line>
+      <line x1="45" y1="45" x2="52" y2="52"></line>
+      <line x1="12" y1="52" x2="19" y2="45"></line>
+      <line x1="45" y1="19" x2="52" y2="12"></line>
+    </g>
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="64" y2="64">
+        <stop offset="0" stop-color="#F59E0B" stop-opacity="0.9"/>
+        <stop offset="1" stop-color="#F59E0B" stop-opacity="0.6"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <svg *ngIf="kind() === 'cloud'" viewBox="0 0 64 64" fill="none">
+    <path d="M22 40h24a10 10 0 0 0 0-20 14 14 0 0 0-27.3 3.3A9 9 0 0 0 22 40Z"
+          fill="#e5e7eb" stroke="#d1d5db" />
+  </svg>
+
+  <svg *ngIf="kind() === 'rain'" viewBox="0 0 64 64" fill="none">
+    <path d="M20 36h24a10 10 0 0 0 0-20 14 14 0 0 0-27.3 3.3A9 9 0 0 0 20 36Z"
+          fill="#e5e7eb" stroke="#d1d5db" />
+    <g stroke="#2563EB" stroke-linecap="round" stroke-width="3">
+      <line x1="22" y1="44" x2="18" y2="54"/>
+      <line x1="34" y1="44" x2="30" y2="54"/>
+      <line x1="46" y1="44" x2="42" y2="54"/>
+    </g>
+  </svg>
+
+  <svg *ngIf="kind() === 'snow'" viewBox="0 0 64 64" fill="none">
+    <path d="M20 36h24a10 10 0 0 0 0-20 14 14 0 0 0-27.3 3.3A9 9 0 0 0 20 36Z"
+          fill="#e5e7eb" stroke="#d1d5db" />
+    <g stroke="#2563EB" stroke-linecap="round" stroke-width="3">
+      <line x1="22" y1="44" x2="22" y2="54"/>
+      <line x1="18" y1="48" x2="26" y2="50"/>
+      <line x1="34" y1="44" x2="34" y2="54"/>
+      <line x1="30" y1="48" x2="38" y2="50"/>
+      <line x1="46" y1="44" x2="46" y2="54"/>
+      <line x1="42" y1="48" x2="50" y2="50"/>
+    </g>
+  </svg>
+
+  <svg *ngIf="kind() === 'storm'" viewBox="0 0 64 64" fill="none">
+    <path d="M20 36h24a10 10 0 0 0 0-20 14 14 0 0 0-27.3 3.3A9 9 0 0 0 20 36Z"
+          fill="#e5e7eb" stroke="#d1d5db" />
+    <polyline points="28,38 24,50 32,46 28,58 42,42 34,44 38,36" fill="#F59E0B" stroke="#D97706" />
+  </svg>
+
+  <svg *ngIf="kind() === 'mist'" viewBox="0 0 64 64" fill="none">
+    <g stroke="#9ca3af" stroke-width="3" stroke-linecap="round">
+      <line x1="8" y1="20" x2="56" y2="20"/>
+      <line x1="12" y1="28" x2="52" y2="28"/>
+      <line x1="8" y1="36" x2="56" y2="36"/>
+      <line x1="12" y1="44" x2="52" y2="44"/>
+    </g>
+  </svg>
+</div>

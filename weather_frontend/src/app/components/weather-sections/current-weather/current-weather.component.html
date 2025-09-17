@@ -1,0 +1,17 @@
+<div class="card hero">
+  <div class="hero-left">
+    <div class="city">{{ data.city }}</div>
+    <div class="temp">
+      <span class="value">{{ data.temp }}°C</span>
+      <span class="desc">{{ data.description }}</span>
+    </div>
+    <div class="meta">
+      <span>Feels like {{ data.feels_like }}°C</span>
+      <span>Humidity {{ data.humidity }}%</span>
+      <span>Wind {{ data.wind }} m/s</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <app-weather-icon [name]="data.icon || data.description"></app-weather-icon>
+  </div>
+</div>

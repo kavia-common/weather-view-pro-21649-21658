@@ -1,0 +1,20 @@
+<section>
+  <div class="actions">
+    <button class="button ghost" (click)="useGeolocation()" title="Use my current location">Use my location</button>
+  </div>
+
+  <div *ngIf="loading()" class="card info">Loading...</div>
+  <div *ngIf="error()" class="card error">{{ error() }}</div>
+
+  <div *ngIf="!loading() && !error() && !current()" class="card muted">
+    Search a city or use your location to view weather.
+  </div>
+
+  <div *ngIf="!loading() && !error() && current() as cur">
+    <app-current-weather [data]="cur"></app-current-weather>
+  </div>
+
+  <div *ngIf="!loading() && !error() && forecast().length > 0" class="mt-16">
+    <app-forecast-list [days]="forecast()"></app-forecast-list>
+  </div>
+</section>

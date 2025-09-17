@@ -35,6 +35,10 @@ html, body {
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(17,24,39,0.06);
 }
+.card.hero {
+  overflow: hidden;
+}
+.mt-16 { margin-top: 16px; }
 
 .button {
   background: var(--color-primary);

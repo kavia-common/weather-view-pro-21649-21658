@@ -1,0 +1,20 @@
+<section>
+  <h3 class="section-title">Forecast</h3>
+  <div class="grid cols-3">
+    <div class="card day" *ngFor="let d of days">
+      <div class="day-top">
+        <div class="day-name">{{ d.day }}</div>
+        <app-weather-icon [name]="d.icon || d.description" [size]="32"></app-weather-icon>
+      </div>
+      <div class="day-desc">{{ d.description }}</div>
+      <div class="day-temps">
+        <span class="high">{{ d.max }}°</span>
+        <span class="low">{{ d.min }}°</span>
+      </div>
+      <div class="day-meta">
+        <span>Humidity {{ d.humidity }}%</span>
+        <span>Wind {{ d.wind }} m/s</span>
+      </div>
+    </div>
+  </div>
+</section>
