@@ -1,0 +1,40 @@
+{
+  "project": "weather-view-pro-21649-21658",
+  "description": "A fullstack application that allows users to view real-time and forecasted weather information for multiple locations, featuring a custom UI and persistent user/location data storage.",
+  "containers": [
+    {
+      "container_name": "weather_frontend",
+      "platform": "web",
+      "framework": "angular",
+      "container_type": "frontend",
+      "description": "User-facing interface that enables search, display, and visualization of weather data. Allows users to manage locations and view current/forecasted weather information.",
+      "interfaces": "REST calls to backend API endpoints (/api/weather, /api/locations, /api/users)",
+      "workspace": "weather-view-pro-21649-21658",
+      "container_root": "weather-view-pro-21649-21658/weather_frontend",
+      "dependencies": [
+        "weather_backend"
+      ],
+      "container_details": {
+        "features": [
+          "User authentication",
+          "Search weather by city or geolocation",
+          "Display current and forecasted weather",
+          "Manage and save favorite locations",
+          "Responsive design for web and mobile"
+        ],
+        "layout_description": "Header with navigation and search, responsive card-based main content area showing weather for selected locations, sidebar for saved locations, and footer for app info.",
+        "style": "modern, minimalistic",
+        "theme": "light",
+        "colors": {
+          "primary": "#2563EB",
+          "secondary": "#F59E0B",
+          "accent": "#F59E0B",
+          "background": "#f9fafb"
+        }
+      }
+    }
+  ],
+  "third_party_services": [
+    "OpenWeatherMap API"
+  ]
+}
