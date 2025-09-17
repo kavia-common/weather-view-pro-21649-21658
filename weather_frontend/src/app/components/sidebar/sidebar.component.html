@@ -1,0 +1,12 @@
+<h3 style="margin:0 0 8px 0;">Saved Locations</h3>
+<div style="display:flex; gap:8px; margin-bottom:8px;">
+  <input class="input" [(ngModel)]="newLocation" placeholder="Add a city" />
+  <button class="button secondary" (click)="add()">Add</button>
+</div>
+<ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px;">
+  <li *ngFor="let city of locations()"
+      style="display:flex; align-items:center; justify-content:space-between; padding:8px; border-radius:10px; border:1px solid rgba(17,24,39,0.06);">
+    <span>{{ city }}</span>
+    <button class="button" style="background:#ef4444" (click)="remove(city)">Remove</button>
+  </li>
+</ul>

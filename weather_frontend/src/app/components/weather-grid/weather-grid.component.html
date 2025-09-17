@@ -1,0 +1,12 @@
+<section>
+  <div *ngIf="loading()" class="card" style="padding:16px;">Loading...</div>
+  <div *ngIf="error()" class="card" style="padding:16px; color:#b91c1c; border-left:4px solid #ef4444;">{{ error() }}</div>
+
+  <div *ngIf="!loading() && !error()" class="grid cols-3">
+    <app-weather-card *ngFor="let item of results()" [data]="item"></app-weather-card>
+  </div>
+
+  <div *ngIf="!loading() && !error() && results().length === 0" class="card" style="padding:16px;">
+    Search a city to view weather.
+  </div>
+</section>

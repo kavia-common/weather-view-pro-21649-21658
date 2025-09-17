@@ -1,0 +1,26 @@
+<div class="card" style="padding:16px;">
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div>
+      <h3 style="margin:0 0 4px 0;">{{ data.city }}</h3>
+      <div style="color:#6b7280;">{{ data.description }}</div>
+    </div>
+    <div class="badge">
+      {{ data.temp }}°C
+    </div>
+  </div>
+
+  <div style="margin-top:12px; display:grid; grid-template-columns: repeat(3, 1fr); gap:10px;">
+    <div class="subcard">
+      <div class="label">Humidity</div>
+      <div class="value">{{ data.humidity }}%</div>
+    </div>
+    <div class="subcard">
+      <div class="label">Wind</div>
+      <div class="value">{{ data.wind }} m/s</div>
+    </div>
+    <div class="subcard">
+      <div class="label">Feels like</div>
+      <div class="value">{{ data.feels_like }}°C</div>
+    </div>
+  </div>
+</div>

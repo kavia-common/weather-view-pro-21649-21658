@@ -1,0 +1,23 @@
+<header class="header">
+  <div class="container header-inner">
+    <div class="badge">Weather View Pro</div>
+    <h1 class="header-title">Ocean Professional</h1>
+    <span class="header-spacer"></span>
+    <app-header (search)="onSearch($event)"></app-header>
+  </div>
+</header>
+
+<div class="container" style="display:grid; grid-template-columns: 280px 1fr; gap: 16px; margin-top: 16px;">
+  <aside class="sidebar">
+    <app-sidebar></app-sidebar>
+  </aside>
+  <main>
+    <!-- Home route shows the grid; profile route will render below via router-outlet -->
+    <app-weather-grid [city]="selectedCity()"></app-weather-grid>
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<footer class="footer">
+  <app-footer></app-footer>
+</footer>

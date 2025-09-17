@@ -1,0 +1,18 @@
+/* Additional layout refinements */
+:host {
+  display: block;
+}
+@media (max-width: 960px) {
+  :host .container {
+    padding: 12px;
+  }
+  :host .header-inner {
+    flex-wrap: wrap;
+  }
+  :host .sidebar {
+    display: none; /* hides sidebar on smaller screens */
+  }
+  :host div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+}

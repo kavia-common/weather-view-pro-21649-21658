@@ -1,0 +1,9 @@
+.subcard {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid rgba(17,24,39,0.06);
+  box-shadow: var(--shadow-sm);
+}
+.subcard .label { color:#6b7280; font-size:12px; }
+.subcard .value { font-weight:700; font-size:16px; }

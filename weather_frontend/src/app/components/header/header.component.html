@@ -1,0 +1,9 @@
+<nav style="display:flex; align-items:center; gap:12px; width:100%;">
+  <a routerLink="/" class="badge" style="text-decoration:none;">Home</a>
+  <a routerLink="/profile" class="badge" style="text-decoration:none; background: rgba(245,158,11,0.12); color:#92400e;">Profile</a>
+  <span style="flex:1"></span>
+  <form class="search-bar" (submit)="onSubmit($event)">
+    <input class="input" type="text" name="q" [(ngModel)]="query" placeholder="Search city..." />
+    <button class="button" type="submit">Search</button>
+  </form>
+</nav>
